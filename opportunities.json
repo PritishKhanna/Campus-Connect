@@ -1,0 +1,8 @@
+[
+  {"type":"Internships","company":"Campus Labs","title":"Frontend Development Intern","location":"Remote","mode":"Work from home","tags":["HTML","CSS","JavaScript"],"days":"5 days left"},
+  {"type":"Internships","company":"PixelWorks","title":"UI/UX Design Intern","location":"Bengaluru","mode":"Hybrid","tags":["Figma","Design","UI"],"days":"8 days left"},
+  {"type":"Jobs","company":"TechBridge","title":"Junior Web Developer","location":"Chandigarh","mode":"Full time","tags":["JavaScript","UI"],"days":"12 days left"},
+  {"type":"Jobs","company":"Nova Systems","title":"Graduate Software Engineer","location":"Pune","mode":"Full time","tags":["Java","Web"],"days":"15 days left"},
+  {"type":"Competitions","company":"Campus Connect","title":"Innovation Challenge 2026","location":"Online","mode":"Team event","tags":["Ideas","Tech"],"days":"18 days left"},
+  {"type":"Competitions","company":"CodeArena","title":"Campus Coding Sprint","location":"Online","mode":"Individual","tags":["Problem Solving","Web"],"days":"21 days left"}
+]

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campus Connect login page.">
+  <title>Campus Connect | Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body.login-page { min-height:100vh; margin:0; background:#f5f8fb; }
+    .login-layout { min-height:100vh; display:grid; grid-template-columns:1fr; }
+
+    .login-art {
+      display:none;
+      position:relative;
+      overflow:hidden;
+      padding:55px;
+      background:#0e3f70;
+      color:#fff;
+    }
+
+    .login-art-content {
+    max-width: 520px;
+    margin-top: 90px;
+    position: relative;
+    z-index: 3;
+}
+
+    .login-art h1 {
+    position: relative;
+    z-index: 4;
+    margin: 10px 0 15px;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 0.98;
+    letter-spacing: -2px;
+}
+
+
+    /* The image sits lower, so it overlaps only the lower part of the heading. */
+    .login-photo {
+    position: absolute;
+    z-index: 2;
+    left: 42px;
+    bottom: 5px;              /* THIS moves the image DOWN */
+    width: calc(100% - 84px);
+    height: 390px;
+    object-fit: cover;
+    border: 1px solid #5d86aa;
+    border-radius: 6px;
+}
+
+    .login-art-content > p:last-child {
+      position:relative;
+      z-index:3;
+      max-width:430px;
+    }
+
+    .login-panel { display:flex; align-items:center; justify-content:center; padding:30px 18px; }
+    .login-box { width:min(430px,100%); padding:30px; border:1px solid var(--line); border-radius:6px; background:#fff; box-shadow:var(--shadow); }
+    .login-brand { display:inline-block; margin-bottom:22px; color:var(--blue); font-size:1.15rem; font-weight:700; }
+    .login-box h2 { margin-bottom:5px; font-size:1.8rem; }
+    .login-box .sub { margin-bottom:23px; color:var(--muted); font-size:.9rem; }
+    .login-form { display:grid; gap:15px; }
+    .login-form label { font-size:.84rem; font-weight:600; }
+    .login-form input[type="email"], .login-form input[type="password"], .login-form input[type="text"] { width:100%; margin-top:5px; padding:11px 12px; border:1px solid #ccd6df; border-radius:4px; outline:0; box-sizing:border-box; }
+    .login-form input:focus { border-color:#7fa4c5; box-shadow:0 0 0 2px #e6f0f8; }
+    .password-row { display:flex; justify-content:space-between; align-items:center; }
+    .password-row button { border:0; background:transparent; color:var(--blue); font-size:.82rem; font-weight:600; cursor:pointer; }
+    .login-submit { width:100%; }
+    .remember-row { display:flex; align-items:center; gap:7px; font-weight:500 !important; }
+    .remember-row input { width:auto !important; margin:0 !important; }
+    .divider { display:flex; align-items:center; gap:10px; margin:21px 0 13px; color:#8a98a5; font-size:.82rem; }
+    .divider::before, .divider::after { content:""; height:1px; flex:1; background:var(--line); }
+    .create-btn { width:100%; padding:11px; border:1px solid #9db9d5; border-radius:4px; background:#fff; color:var(--blue); font-weight:600; cursor:pointer; }
+    .create-btn:hover { background:var(--blue-light); }
+    .account-options { display:none; margin-top:10px; padding:10px; border:1px solid var(--line); border-radius:5px; background:#f8fafc; }
+    .account-options.show { display:grid; gap:7px; }
+    .account-option { padding:9px 10px; border:1px solid #d2dce5; border-radius:4px; background:#fff; color:#263846; text-align:left; font-weight:600; cursor:pointer; }
+    .account-option:hover { border-color:#8eacc8; color:var(--blue); }
+
+    @media (min-width:850px) {
+      .login-layout { grid-template-columns:1fr 1fr; }
+      .login-art { display:block; }
+    }
+
+    @media (min-width:1200px) {
+      .login-photo { top:330px; height:310px; }
+    }
+  </style>
+</head>
+<body class="login-page">
+  <div class="login-layout">
+    <section class="login-art" aria-label="Campus Connect introduction">
+      <a class="login-brand" href="index.html" style="color:#fff; margin-bottom:0;">Campus Connect</a>
+      <div class="login-art-content">
+        <p class="small-heading" style="color:#cfe0f1;">STUDENT PORTAL</p>
+        <h1>Welcome to Campus Connect.</h1>
+        <p>Log in to view opportunities, campus announcements and student services.</p>
+      </div>
+      <img class="login-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=85" alt="Students collaborating">
+    </section>
+
+    <main class="login-panel">
+      <section class="login-box" aria-labelledby="loginTitle">
+        <a class="login-brand" href="index.html">Campus Connect</a>
+        <h2 id="loginTitle">Log in</h2>
+        <p class="sub">Use your account details to continue.</p>
+
+        <form class="login-form" id="loginForm">
+          <div><label for="loginEmail">Email</label><input id="loginEmail" type="email" required placeholder="you@example.com"></div>
+          <div>
+            <div class="password-row"><label for="loginPassword">Password</label><button type="button" id="togglePassword">Show</button></div>
+            <input id="loginPassword" type="password" required minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}" title="Password must be at least 8 characters and include one uppercase letter, one lowercase letter, and one special character." placeholder="Enter password">
+          </div>
+          <label class="remember-row"><input id="remember" type="checkbox"> Remember me</label>
+          <button class="btn primary-btn login-submit" type="submit">Log in</button>
+          <p class="form-message" id="loginMessage" role="status"></p>
+        </form>
+
+        <div class="divider">or</div>
+        <button class="create-btn" id="createAccountBtn" type="button">Create an account</button>
+        <div class="account-options" id="accountOptions" aria-label="Choose account type">
+          <button class="account-option" type="button" data-role="Student">Create account as Student</button>
+          <button class="account-option" type="button" data-role="Company">Create account as Company</button>
+          <button class="account-option" type="button" data-role="Mentor">Create account as Mentor</button>
+        </div>
+        <p class="form-message" id="accountMessage" role="status"></p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const password = document.getElementById("loginPassword");
+    const message = document.getElementById("loginMessage");
+    const accountOptions = document.getElementById("accountOptions");
+
+    document.getElementById("togglePassword").addEventListener("click", (event) => {
+      const visible = password.type === "text";
+      password.type = visible ? "password" : "text";
+      event.target.textContent = visible ? "Show" : "Hide";
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const emailInput = document.getElementById("loginEmail");
+      const passwordInput = document.getElementById("loginPassword");
+      const email = emailInput.value.trim();
+      const passwordValue = passwordInput.value;
+
+      if (!email || !passwordValue) {
+        message.textContent = "Please fill in your email and password.";
+        return;
+      }
+
+      const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}$/;
+      if (!passwordPattern.test(passwordValue)) {
+        message.textContent = "Password must be at least 8 characters and include uppercase, lowercase and a special character.";
+        passwordInput.focus();
+        return;
+      }
+
+      if (!emailInput.checkValidity()) {
+        message.textContent = "Please enter a valid email address.";
+        emailInput.focus();
+        return;
+      }
+
+      const allowedEmail = "student@college.edu.in";
+      const allowedPassword = "Student@123";
+
+      if (email !== allowedEmail || passwordValue !== allowedPassword) {
+        message.textContent = "Invalid email or password.";
+        message.style.color = "#b33a3a";
+        return;
+      }
+
+      localStorage.setItem("campusConnectLogin", JSON.stringify({ email, loginTime: new Date().toISOString() }));
+      message.style.color = "#176b3a";
+      message.textContent = "Login successful! Redirecting...";
+      setTimeout(() => { window.location.href = "index.html"; }, 700);
+    });
+
+    document.getElementById("createAccountBtn").addEventListener("click", () => {
+      accountOptions.classList.toggle("show");
+    });
+
+    document.querySelectorAll(".account-option").forEach((option) => {
+      option.addEventListener("click", () => {
+        document.getElementById("accountMessage").textContent = `Account type selected: ${option.dataset.role}. Registration will be added in a later evaluation.`;
+      });
+    });
+  </script>
+</body>
+</html>

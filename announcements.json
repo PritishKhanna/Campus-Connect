@@ -1,0 +1,38 @@
+[
+  {
+    "category": "Academic",
+    "date": "05 Sep",
+    "title": "Mid-semester schedule released",
+    "description": "Students can check the updated academic schedule through the campus portal."
+  },
+  {
+    "category": "Events",
+    "date": "08 Sep",
+    "title": "Campus innovation showcase",
+    "description": "Student teams can register for the upcoming project and innovation showcase."
+  },
+  {
+    "category": "Notice",
+    "date": "10 Sep",
+    "title": "Library timing update",
+    "description": "The library will follow extended working hours during the examination period."
+  },
+  {
+    "category": "Student Life",
+    "date": "12 Sep",
+    "title": "Student club registrations",
+    "description": "Explore student clubs and register for activities that match your interests."
+  },
+  {
+    "category": "Placement",
+    "date": "15 Sep",
+    "title": "Career preparation workshop",
+    "description": "A practical session covering resume preparation and interview readiness."
+  },
+  {
+    "category": "Campus",
+    "date": "18 Sep",
+    "title": "Transport notice",
+    "description": "Students are advised to check updated campus transport information before travelling."
+  }
+]

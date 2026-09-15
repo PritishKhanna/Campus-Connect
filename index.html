@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campus Connect - student opportunities, announcements and campus services.">
+  <title>Campus Connect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="side-panel" aria-label="Sidebar navigation">
+    <a class="sidebar-brand" href="#home" title="Campus Connect">
+      <span class="brand-box">CC</span>
+    </a>
+
+    <button class="post-btn" data-action="post" title="Post an Opportunity">
+      <span class="nav-icon">+</span>
+      <span class="side-label">Post an Opportunity</span>
+    </button>
+
+    <nav class="side-nav">
+      <a class="side-link active" href="#home" title="Home"><span class="nav-icon">▣</span><span class="side-label">Home</span></a>
+      <a class="side-link" href="#opportunities" title="Internships"><span class="nav-icon">☷</span><span class="side-label">Internships</span></a>
+      <a class="side-link" href="#opportunities" title="Jobs"><span class="nav-icon">▤</span><span class="side-label">Jobs</span></a>
+      <a class="side-link" href="#opportunities" title="Competitions"><span class="nav-icon">♛</span><span class="side-label">Competitions</span></a>
+      <a class="side-link" href="#announcements" title="Announcements"><span class="nav-icon">✓</span><span class="side-label">Announcements</span></a>
+      <a class="side-link" href="#services" title="Mock Tests"><span class="nav-icon">◎</span><span class="side-label">Mock Tests</span></a>
+      <a class="side-link" href="#services" title="Mentorship"><span class="nav-icon">♧</span><span class="side-label">Mentorship</span></a>
+      <a class="side-link" href="#services" title="Prep Zone"><span class="nav-icon">+</span><span class="side-label">Prep Zone</span></a>
+    </nav>
+
+    <div class="side-cards">
+      <article class="side-card">
+        <strong>Post a Job or Internship</strong>
+        <small>Share an opportunity with students.</small>
+        <button data-action="post" aria-label="Post an opportunity">+</button>
+      </article>
+      <article class="side-card second-card">
+        <strong>Become a Mentor</strong>
+        <small>Help students with your experience.</small>
+        <button data-action="mentor" aria-label="Become a mentor">+</button>
+      </article>
+    </div>
+  </aside>
+
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="mobile-brand" href="#home">Campus Connect</a>
+
+      <form class="top-search" id="topSearch">
+        <span aria-hidden="true">⌕</span>
+        <label class="sr-only" for="globalSearch">Search opportunities</label>
+        <input id="globalSearch" type="search" placeholder="Search opportunities">
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="top-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Open search">⌕</button>
+        <a class="login-btn" href="login.html">Log in</a>
+        <a class="signup-btn" href="login.html#signup">Sign up</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="small-heading">CAMPUS CONNECT</p>
+          <h1>Opportunities made easier for students.</h1>
+          <p class="hero-text">Find internships, jobs, competitions and useful campus information in one place.</p>
+          <div class="hero-buttons">
+            <a class="btn primary-btn" href="#opportunities">Explore opportunities</a>
+            <a class="btn outline-btn" href="#announcements">View announcements</a>
+          </div>
+          <div class="hero-note">
+            <span class="note-mark">✓</span>
+            <div><strong>Built as a student project</strong><small>Simple, useful and easy to navigate.</small></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85" alt="Students working together on campus" class="hero-image">
+        </div>
+      </section>
+
+      <section class="category-strip" aria-label="Opportunity categories">
+        <button data-filter="Internships"><span class="category-icon">01</span><b>Internships</b><small>Gain experience</small></button>
+        <button data-filter="Jobs"><span class="category-icon">02</span><b>Jobs</b><small>Find openings</small></button>
+        <button data-filter="Competitions"><span class="category-icon">03</span><b>Competitions</b><small>Test your skills</small></button>
+        <button data-filter="Mock Tests"><span class="category-icon">04</span><b>Mock Tests</b><small>Practice</small></button>
+        <button data-filter="Mock Interviews"><span class="category-icon">05</span><b>Mock Interviews</b><small>Prepare</small></button>
+        <button data-filter="Hackathons"><span class="category-icon">06</span><b>Hackathons</b><small>Build projects</small></button>
+        <button data-filter="Mentorship"><span class="category-icon">07</span><b>Mentorship</b><small>Learn from others</small></button>
+      </section>
+
+      <section class="section" id="announcements">
+        <div class="section-head">
+          <div>
+            <p class="small-heading">CAMPUS UPDATES</p>
+            <h2>Announcements</h2>
+            <p>Important updates and student notices.</p>
+          </div>
+        </div>
+        <div class="announcement-list" id="announcementList" aria-live="polite">
+          <p class="loading">Loading announcements...</p>
+        </div>
+      </section>
+
+      <section class="section opportunities-section" id="opportunities">
+        <div class="section-head">
+          <div>
+            <p class="small-heading">OPPORTUNITIES</p>
+            <h2>Latest opportunities</h2>
+            <p>Search and filter opportunities that match your interests.</p>
+          </div>
+          <div class="filter-row" role="group" aria-label="Opportunity filters">
+            <button class="filter active" data-filter="All">All</button>
+            <button class="filter" data-filter="Internships">Internships</button>
+            <button class="filter" data-filter="Jobs">Jobs</button>
+            <button class="filter" data-filter="Competitions">Competitions</button>
+          </div>
+        </div>
+        <div class="opportunity-grid" id="opportunityGrid" aria-live="polite">
+          <p class="loading">Loading opportunities...</p>
+        </div>
+      </section>
+
+      <section class="section services-section" id="services">
+        <div class="section-head">
+          <div>
+            <p class="small-heading">CAMPUS SERVICES</p>
+            <h2>Useful student services</h2>
+            <p>Basic campus tools that can be expanded in later evaluations.</p>
+          </div>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><span class="service-icon">₹</span><h3>Fee Portal</h3><p>Fee information and payment notices.</p><button class="text-btn" data-action="service" data-service="Fee Portal">Open service →</button></article>
+          <article class="service-card"><span class="service-icon">L</span><h3>Library</h3><p>Library timings, resources and useful links.</p><button class="text-btn" data-action="service" data-service="Library">Open service →</button></article>
+          <article class="service-card"><span class="service-icon">B</span><h3>Transport</h3><p>Quick access to campus transport information.</p><button class="text-btn" data-action="service" data-service="Transport">Open service →</button></article>
+          <article class="service-card"><span class="service-icon">?</span><h3>Student Help</h3><p>Send a question to the student help desk.</p><button class="text-btn" data-action="service" data-service="Student Help">Open service →</button></article>
+        </div>
+      </section>
+
+      <section class="image-banner">
+        <div class="banner-copy">
+          <p class="small-heading">FOR STUDENTS</p>
+          <h2>Everything in one campus place.</h2>
+          <p>Start with opportunities and announcements. More features can be added in the next evaluations.</p>
+          <a class="btn white-btn" href="login.html">Log in to continue</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85" alt="Students working together">
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="contact-grid">
+          <div>
+            <p class="small-heading">CONTACT</p>
+            <h2>Need help?</h2>
+            <p>Send a short message. The form is handled with JavaScript and the latest request is stored in your browser.</p>
+            <div class="saved-user" id="savedUser" hidden></div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div><label for="name">Name</label><input id="name" name="name" required minlength="2" placeholder="Your name"></div>
+              <div><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="student@example.com"></div>
+            </div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required minlength="10" rows="5" placeholder="Write your query..."></textarea>
+            <button class="btn primary-btn" type="submit">Submit request</button>
+            <p id="formMessage" class="form-message" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div><strong>Campus Connect</strong><p>Student opportunities and campus information.</p></div>
+      <div class="footer-links"><a href="#home">Home</a><a href="#announcements">Announcements</a><a href="#opportunities">Opportunities</a><a href="#services">Services</a><a href="login.html">Login</a></div>
+      <p class="copyright">© 2026 Campus Connect • Front End Engineering-II</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
